@@ -9,4 +9,4 @@ A ground-lift function is included. The input connector (Neutrik NC3FBH1) ties p
 
 Additionally, a selectable low-cut filter is available on the send path, allowing low-frequency attenuation (e.g. for vocal processing) to reduce potential muddiness in downstream effects.
 
-The send can be turned On/Off with a footswitch. Another footswitch is used to bypass the pedal entirely. The switching is done using two small signal relais which are controlled with a H-bridge and an ATTiny-85 running some C code.
+The send can be turned On/Off with a footswitch. Another footswitch is used to bypass the pedal entirely. The switching is done using two small signal relais which are controlled with a H-bridge and an ATTiny-85.
