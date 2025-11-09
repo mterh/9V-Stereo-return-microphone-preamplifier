@@ -43,11 +43,11 @@ Because the unit is intended for live use, 48 V phantom power is not included. A
 ## Schematics
 
 ### Main Preamplifier
-![Microphone Preamplifier — Main Schematic](docs/main_schematic.png)
+![Microphone Preamplifier — Main Schematic](docs/main_schematic.jpg)
 
 ### Clipping Indicator
-![Microphone Preamplifier — Clipping Indicator Schematic](docs/clipping_indicator_schematic.png)
+![Microphone Preamplifier — Clipping Indicator Schematic](docs/clipping_indicator_schematic.jpg)
 
 ### MCU Switching
-![Microphone Preamplifier — MCU Switching Schematic](docs/mcu_switching_schematic.png)
+![Microphone Preamplifier — MCU Switching Schematic](docs/mcu_switching_schematic.jpg)
 
