@@ -1,18 +1,53 @@
-# 9V-Stereo-return-microphone-preamplifier
-A simple microphone preamplifier in the standard guitar pedal format designed for live usage.
+# 9V Stereo Return Microphone Preamplifier
+*A simple microphone preamplifier in the standard guitar pedal format designed for live usage.*
 
-This circuit is a microphone preamplifier designed to make dynamic microphones usable with guitar-pedals. It provides sufficient gain to bring a microphone-level signal up to typical pedal operating levels while maintaining low noise performance. Since it is designed for live usage I decided not to add 48V phantom power, which also would have required a more sophisticated power section, as well as a power supply differing from the standard 9V dc found in other guitar effect pedals.
 
-The pedals has a balanced XLR input, a 6.3 mm send, stereo 6.3 mm return inputs, and balanced stereo XLR outputs. A led on the front is used to indicate when the preamp clips, with the threshold adjustable via an onboard trimmer. Gain configuration is handled by a 3-position DIP switch on the PCB, allowing selection of the maximum available gain. This enables precise control of gain for different sources (e.g., vocals, trumpet) without the need for additional panel controls.
+## Overview
+This circuit is a **microphone preamplifier** designed to make dynamic microphones compatible with **guitar pedals**. It provides sufficient gain to raise microphone-level signals to typical pedal operating levels while maintaining low-noise performance.
 
-A ground-lift function is included. The input connector (Neutrik NC3FBH1) ties pin 1 directly to the chassis. For ground-lift operation, the output XLR connectors (Neutrik NC3MAH-S) route pin 1 to a PCB ground plane associated with the XLR output section, rather than directly to the enclosure, resulting in a serial star-grounding topology. This allows the output ground to be lifted while maintaining a proper chassis bond at the input.
+Because the unit is intended for **live use**, **48 V phantom power is not included**—adding it would require a more complex power section and a non-standard supply. The device operates from a standard **9 V DC** pedal supply.
 
-Additionally, a selectable low-cut filter is available on the send path, allowing low-frequency attenuation (e.g. for vocal processing) to reduce potential muddiness in downstream effects.
 
-The send can be turned On/Off with a footswitch. Another footswitch is used to bypass the pedal entirely, indicated by a led. The switching is done using two small signal relais which are controlled with a H-bridge and an ATTiny-85.
+## Features
 
-The 3 main controlls are a Gain pot, a Dry/Wet Mix pot and a output volume pot. The last one was added so that the user can adjust the volume of the whole signal live to control the volume of louder passages.
+### Signal Path
+- **Balanced XLR input** (Neutrik **NC3FBH1**)
+- **6.3 mm send**
+- **Stereo 6.3 mm returns**
+- **Balanced stereo XLR outputs** (Neutrik **NC3MAH-S**)
 
-![Microphone Preamplifier Main Schematic](preamp_main_schematic.png)
-![Microphone Preamplifier Clipping indicator Schematic](preamp clipping indicator schematic.png)
-![Microphone Preamplifier mcu switching  Schematic](preamp mcu switching schematic.png)
+### Gain and Indication
+- **Clipping indicator LED**, threshold adjustable via onboard trimmer
+- **3-position DIP switch** to select the **maximum gain**
+  - Enables precise gain control for different sources (e.g., vocals, trumpet) while keeping the front panel uncluttered
+
+### Some grounding considerations
+- Input XLR **pin 1** is bonded directly to the **chassis** via Neutrik NC3FBH1
+- Output XLR **pin 1** routed to a **PCB ground plane** (not directly to chassis), implementing a **serial star-ground** topology
+- **Ground-lift switch** allows lifting output ground while maintaining a solid chassis bond at the input
+
+### Filtering and Switching
+- **Selectable low-cut filter** on the send (to reduce, for example, vocal low-frequency in order to prevent a muddy effects signal)
+- **Send On/Off** footswitch (in hindsight i shouldve added another led for this switch)
+- **True bypass** footswitch with LED indicator
+
+### Control Logic
+- Switching via **two small-signal relays** driven by an **H-bridge** and an **ATtiny85**
+
+### Front-Panel Controls
+- **Gain** — microphone preamplifier gain
+- **Dry/Wet Mix** — blend of direct and return signals
+- **Output Volume** — final output level for live dynamics control
+
+
+## Schematics
+
+### Main Preamplifier
+![Microphone Preamplifier — Main Schematic](docs/preamp_main_schematic.png)
+
+### Clipping Indicator
+![Microphone Preamplifier — Clipping Indicator Schematic](docs/preamp_clipping_indicator_schematic.png)
+
+### MCU Switching
+![Microphone Preamplifier — MCU Switching Schematic](docs/preamp_mcu_switching_schematic.png)
+
