@@ -5,7 +5,7 @@
 ## Overview
 This circuit is a **microphone preamplifier** designed to make dynamic microphones compatible with **guitar pedals**. It provides sufficient gain to raise microphone-level signals to typical pedal operating levels while maintaining low-noise performance.
 
-Because the unit is intended for **live use**, **48 V phantom power is not included**—adding it would require a more complex power section and a non-standard supply. The device operates from a standard **9 V DC** pedal supply.
+Because the unit is intended for live use, 48 V phantom power is not included. Aadding it would have required a more sophisticaed power section and power supply differing from the standard 9V DC used with other effect pedals. Since this was my first time working with a microcontroller and programming in c I closely followed this tutorial (https://www.amplifiedparts.com/tech-articles/relay-true-bypass-switching-3) for controlling the relais.
 
 
 ## Features
@@ -18,12 +18,12 @@ Because the unit is intended for **live use**, **48 V phantom power is not inclu
 
 ### Gain and Indication
 - **Clipping indicator LED**, threshold adjustable via onboard trimmer
-- **3-position DIP switch** to select the **maximum gain**
+- **3-position DIP switch** to select the maximum gain
   - Enables precise gain control for different sources (e.g., vocals, trumpet) while keeping the front panel uncluttered
 
 ### Some grounding considerations
-- Input XLR **pin 1** is bonded directly to the **chassis** via Neutrik NC3FBH1
-- Output XLR **pin 1** routed to a **PCB ground plane** (not directly to chassis), implementing a **serial star-ground** topology
+- Input XLR **pin 1** is bonded directly to the chassis via Neutrik NC3FBH1
+- Output XLR **pin 1** routed to a PCB ground plane (not directly to chassis), implementing a serial star-ground topology
 - **Ground-lift switch** allows lifting output ground while maintaining a solid chassis bond at the input
 
 ### Filtering and Switching
@@ -43,11 +43,11 @@ Because the unit is intended for **live use**, **48 V phantom power is not inclu
 ## Schematics
 
 ### Main Preamplifier
-![Microphone Preamplifier — Main Schematic](docs/preamp_main_schematic.png)
+![Microphone Preamplifier — Main Schematic](docs/main_schematic.png)
 
 ### Clipping Indicator
-![Microphone Preamplifier — Clipping Indicator Schematic](docs/preamp_clipping_indicator_schematic.png)
+![Microphone Preamplifier — Clipping Indicator Schematic](docs/clipping_indicator_schematic.png)
 
 ### MCU Switching
-![Microphone Preamplifier — MCU Switching Schematic](docs/preamp_mcu_switching_schematic.png)
+![Microphone Preamplifier — MCU Switching Schematic](docs/mcu_switching_schematic.png)
 
